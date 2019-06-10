@@ -1,5 +1,4 @@
 import React from 'react';
-import data from '../data';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
@@ -10,23 +9,46 @@ import DeleteIcon from '@material-ui/icons/Delete';
 import Button from '@material-ui/core/Button';
 // import PropTypes from 'prop-types';
 import Grid from '@material-ui/core/Grid';
+import { withRouter } from 'react-router';
 
 class DetailedView extends React.PureComponent {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
-      appList: data.applications
+      appList: props.context.applications
     };
   }
-  render() {
-    const appDetails = this.state.appList.filter(item =>
+
+  onAdd = guid => {
+    this.props.history.push(`/add-version/${guid}`);
+  };
+
+  onDelete = id => {
+    const list = this.state.appList;
+    const filterList = list.map(item => {
+      const index = item.versions.map(version => version.guid).indexOf(id);
+      if (index !== -1) item.versions.splice(index, 1);
+      return item;
+    });
+    this.setState({
+      appList: filterList
+    });
+  };
+
+  getAppDetails = () => {
+    const app = this.state.appList.filter(item =>
       item.guid
         ? item.guid.toLowerCase().includes(this.props.match.params.guid)
         : false
     );
-    const currentVersion = appDetails[0].versions.map(item =>
-      item.currentVersion ? item.name : ''
-    );
+    return app[0]; // return single filtered element
+  };
+
+  render() {
+    const appDetails = this.getAppDetails();
+    const currentVersion =
+      appDetails.versions &&
+      appDetails.versions.map(item => (item.currentVersion ? item.name : ''));
     return (
       <div>
         <Paper
@@ -38,13 +60,13 @@ class DetailedView extends React.PureComponent {
         >
           <Grid container spacing={1}>
             <Grid item md={12}>
-              <strong>Application Name :</strong> {appDetails[0].name}
+              <strong>Application Name :</strong> {appDetails.name}
             </Grid>
             <Grid item md={9}>
               <strong>Current version :</strong> {currentVersion}
             </Grid>
             <Grid item md={3}>
-              <strong>Application state :</strong> {appDetails[0].state}
+              <strong>Application state :</strong> {appDetails.state}
             </Grid>
           </Grid>
         </Paper>
@@ -61,10 +83,11 @@ class DetailedView extends React.PureComponent {
               </TableRow>
             </TableHead>
             <TableBody>
-              {appDetails[0].versions.map(row => (
+              {appDetails.versions.map(row => (
                 <TableRow key={row.name}>
                   <TableCell component="th" scope="row">
                     {row.name}
+                    {row.currentVersion ? '*' : ''}
                   </TableCell>
                   <TableCell align="center">{row.guid}</TableCell>
                   <TableCell align="center">{row.status}</TableCell>
@@ -75,7 +98,10 @@ class DetailedView extends React.PureComponent {
                     {row.currentVersion ? 'Yes' : 'No'}
                   </TableCell>
                   <TableCell>
-                    <Button>
+                    <Button
+                      onClick={() => this.onDelete(row.guid)}
+                      disabled={row.currentVersion}
+                    >
                       <DeleteIcon />
                     </Button>
                   </TableCell>
@@ -91,11 +117,13 @@ class DetailedView extends React.PureComponent {
             justifyContent: 'center'
           }}
         >
-          <Button variant="contained">Add version</Button>
+          <Button variant="contained" onClick={() => this.onAdd(appDetails.guid)}>
+            Add version
+          </Button>
         </div>
       </div>
     );
   }
 }
 
-export default DetailedView;
+export default withRouter(DetailedView);

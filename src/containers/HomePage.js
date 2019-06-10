@@ -65,21 +65,19 @@ class HomePage extends React.PureComponent {
       (this.state.searchText !== '' && this.state.filteredList) ||
       this.state.appList;
     this.props.context.applications = this.state.appList;
-    console.log(this.props.context.applications);
     return (
       <div>
         <div
           style={{
             display: 'flex',
             justifyContent: 'space-between',
-            paddingTop: 10
+            padding: 10
           }}
         >
           <span style={{ color: purple[800] }}>Welcome user!</span>
           <span
             style={{
               display: 'flex',
-              justifyContent: 'end',
               position: 'relative'
             }}
           >
@@ -113,14 +111,9 @@ class HomePage extends React.PureComponent {
             </TableHead>
             <TableBody>
               {list.map(row => (
-                <TableRow key={row.name}>
+                <TableRow key={row.guid}>
                   <TableCell component="th" scope="row">
-                    <Link
-                      style={{ textDecoration: 'none', color: 'black' }}
-                      to={{ pathname: `/detailed-view/${row.guid}` }}
-                    >
-                      {row.name}
-                    </Link>
+                    {row.name}
                   </TableCell>
                   <TableCell align="center">{row.guid}</TableCell>
                   <TableCell align="center">{row.state.toString()}</TableCell>
@@ -132,9 +125,12 @@ class HomePage extends React.PureComponent {
                       )
                   )}
                   <TableCell>
-                    <Button>
+                    <Link
+                      style={{ textDecoration: 'none', color: 'black' }}
+                      to={{ pathname: `/detailed-view/${row.guid}` }}
+                    >
                       <ZoomIn />
-                    </Button>
+                    </Link>
                   </TableCell>
                   <TableCell>
                     <Button onClick={() => this.onDelete(row.guid)}>
@@ -168,7 +164,7 @@ class HomePage extends React.PureComponent {
           <Button
             variant="contained"
             // className={classes.button}
-            onClick={this.onAdd}
+            onClick={() => this.onAdd()}
           >
             Add Application
           </Button>
@@ -180,6 +176,5 @@ class HomePage extends React.PureComponent {
 HomePage.propTypes = {
   // classes: PropTypes.object.isRequired
 };
-
 
 export default withRouter(HomePage);
