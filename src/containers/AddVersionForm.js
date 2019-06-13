@@ -1,6 +1,6 @@
 import React from 'react';
 import Button from '@material-ui/core/Button';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import InputLabel from '@material-ui/core/InputLabel';
 import Input from '@material-ui/core/Input';
 import FormControl from '@material-ui/core/FormControl';
@@ -169,5 +169,9 @@ class AddVersionForm extends React.PureComponent {
     );
   }
 }
+
+AddVersionForm.propTypes = {
+	context: PropTypes.object.isRequired
+};
 
 export default AddVersionForm;
