@@ -10,6 +10,7 @@ import Button from '@material-ui/core/Button';
 import PropTypes from 'prop-types';
 import Grid from '@material-ui/core/Grid';
 import { withRouter } from 'react-router';
+import '../styles/DetailedView.scss';
 
 class DetailedView extends React.PureComponent {
 	constructor(props) {
@@ -23,17 +24,17 @@ class DetailedView extends React.PureComponent {
 		this.props.history.push(`/add-version/${guid}`);
 	};
 
-	onDelete = id => {
-    const list = this.state.appList;
-    const filterList = list.map(item => {
-      const index = item.versions.map(version => version.guid).indexOf(id);
-      if (index !== -1) item.versions.splice(index, 1);
-      return item;
-    });
-    this.setState({
-      appList: filterList
-    });
-  };
+	onDelete = (id) => {
+		const list = this.state.appList;
+		const filterList = list.map((item) => {
+			const index = item.versions.map((version) => version.guid).indexOf(id);
+			if (index !== -1) item.versions.splice(index, 1);
+			return item;
+		});
+		this.setState({
+			appList: filterList
+		});
+	};
 
 	getAppDetails = () => {
 		const app = this.state.appList.filter(
@@ -48,18 +49,12 @@ class DetailedView extends React.PureComponent {
 			appDetails.versions && appDetails.versions.map((item) => (item.currentVersion ? item.name : ''));
 		return (
 			<div>
-				<Paper
-					style={{
-						display: 'flex',
-						padding: 10,
-						margin: '15px 0'
-					}}
-				>
+				<Paper className="app-details-wrapper">
 					<Grid container spacing={1}>
-						<Grid item md={12}>
+						<Grid item md={5}>
 							<strong>Application Name :</strong> {appDetails.name}
 						</Grid>
-						<Grid item md={9}>
+						<Grid item md={4}>
 							<strong>Current version :</strong> {currentVersion}
 						</Grid>
 						<Grid item md={3}>
@@ -102,13 +97,7 @@ class DetailedView extends React.PureComponent {
 						</TableBody>
 					</Table>
 				</Paper>
-				<div
-					style={{
-						display: 'flex',
-						marginTop: 15,
-						justifyContent: 'center'
-					}}
-				>
+				<div className='add-button'>
 					<Button variant="contained" onClick={() => this.onAdd(appDetails.guid)}>
 						Add version
 					</Button>
