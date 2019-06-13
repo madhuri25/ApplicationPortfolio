@@ -1,0 +1,14 @@
+0000000000000000000000000000000000000000 c1bc139e974259044d84eba7f9143149ccc1c512 Maddy <dac@ex.com> 1560277006 +0300	clone: from https://github.com/madhuri25/ApplicationPortfolio.git
+c1bc139e974259044d84eba7f9143149ccc1c512 75004a775e2254ab70f39563313d2053aef611f6 Maddy <dac@ex.com> 1560285486 +0300	commit: Added : test setup file
+75004a775e2254ab70f39563313d2053aef611f6 9eb71c9e3a599a46ebf319bdb8269661edba26c7 madhuri25 <madhurisandbhor@gmail.com> 1560410216 +0300	pull: Merge made by the 'recursive' strategy.
+9eb71c9e3a599a46ebf319bdb8269661edba26c7 75004a775e2254ab70f39563313d2053aef611f6 madhuri25 <madhurisandbhor@gmail.com> 1560414689 +0300	reset: moving to HEAD^
+75004a775e2254ab70f39563313d2053aef611f6 9eb71c9e3a599a46ebf319bdb8269661edba26c7 madhuri25 <madhurisandbhor@gmail.com> 1560414752 +0300	pull: Fast-forward
+9eb71c9e3a599a46ebf319bdb8269661edba26c7 9eb71c9e3a599a46ebf319bdb8269661edba26c7 madhuri25 <madhurisandbhor@gmail.com> 1560415109 +0300	rebase -i (finish): returning to refs/heads/master
+9eb71c9e3a599a46ebf319bdb8269661edba26c7 75004a775e2254ab70f39563313d2053aef611f6 madhuri25 <madhurisandbhor@gmail.com> 1560415321 +0300	reset: moving to HEAD^
+75004a775e2254ab70f39563313d2053aef611f6 c1bc139e974259044d84eba7f9143149ccc1c512 madhuri25 <madhurisandbhor@gmail.com> 1560415384 +0300	reset: moving to HEAD^
+c1bc139e974259044d84eba7f9143149ccc1c512 c1bc139e974259044d84eba7f9143149ccc1c512 madhuri25 <madhurisandbhor@gmail.com> 1560415508 +0300	rebase -i (finish): returning to refs/heads/master
+c1bc139e974259044d84eba7f9143149ccc1c512 7f3759a15a250c2669d06b4463b70d43c2f54c51 madhuri25 <madhurisandbhor@gmail.com> 1560417686 +0300	commit: Added: Layout component
+7f3759a15a250c2669d06b4463b70d43c2f54c51 547338342cc295d3675f1f83f4021ae8eb26de69 madhuri25 <madhurisandbhor@gmail.com> 1560429826 +0300	commit: Added:sass style
+547338342cc295d3675f1f83f4021ae8eb26de69 7f3759a15a250c2669d06b4463b70d43c2f54c51 madhuri25 <madhurisandbhor@gmail.com> 1560431065 +0300	reset: moving to HEAD~1
+7f3759a15a250c2669d06b4463b70d43c2f54c51 70c1270ba883be0bd8544cb838b9d26a31329896 madhuri25 <madhurisandbhor@gmail.com> 1560431110 +0300	commit: Added: SASS styles
+70c1270ba883be0bd8544cb838b9d26a31329896 cd80b1efe2300ce00544a8abdaaddf1b5939c640 madhuri25 <madhurisandbhor@gmail.com> 1560450885 +0300	commit: Added: test cases for Home page
