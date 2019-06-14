@@ -24,7 +24,7 @@ const params = {
 
 afterEach(cleanup);
 describe('<HomePage />', () => {
-	it('should render component with correct class', async () => {
+	it('should render component with correct class',() => {
 		const { container } = render(
 			<Router>
 				<HomePage {...params} />
@@ -34,7 +34,7 @@ describe('<HomePage />', () => {
         expect(container.querySelector('.search-wrapper')).not.toBeNull;
     });
 
-    it('should render exact number of items in the list', async () => {
+    it('should render exact number of items in the list',() => {
 		const { container } = render(
 			<Router>
 				<HomePage {...params} />
