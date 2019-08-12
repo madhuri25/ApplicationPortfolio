@@ -20,8 +20,8 @@ class DetailedView extends React.PureComponent {
 		};
 	}
 
-	onAdd = (guid) => {
-		this.props.history.push(`/add-version/${guid}`);
+	onAdd = () => {
+		this.props.history.push(`/add-version/${this.props.match.params.guid}`);
 	};
 
 	onDelete = (id) => {
@@ -98,7 +98,7 @@ class DetailedView extends React.PureComponent {
 					</Table>
 				</Paper>
 				<div className='add-button'>
-					<Button variant="contained" onClick={() => this.onAdd(appDetails.guid)}>
+					<Button variant="contained" onClick={this.onAdd}>
 						Add version
 					</Button>
 				</div>

@@ -83,7 +83,7 @@ class AddVersionForm extends React.PureComponent {
 							id="version-name"
 							name="versionName"
 							value={this.state.versionName}
-							onChange={(event) => this.handleChange(event)}
+							onChange={this.handleChange}
 							required
 						/>
 					</FormControl>
@@ -93,7 +93,7 @@ class AddVersionForm extends React.PureComponent {
 							id="version-id"
 							name="appVersionGuid"
 							value={this.state.appVersionGuid}
-							onChange={(event) => this.handleChange(event)}
+							onChange={this.handleChange}
 							required
 						/>
 					</FormControl>
@@ -105,7 +105,7 @@ class AddVersionForm extends React.PureComponent {
 							type="date"
 							name="appVersionDate"
 							value={new Date(this.state.appVersionDate).toISOString().split('T')[0]}
-							onChange={(event) => this.handleChange(event)}
+							onChange={this.handleChange}
 							required
 						/>
 					</FormControl>
@@ -113,7 +113,7 @@ class AddVersionForm extends React.PureComponent {
 						<InputLabel htmlFor="version-no">version Status</InputLabel>
 						<Select
 							value={this.state.versionStatus}
-							onChange={(event) => this.handleChange(event)}
+							onChange={this.handleChange}
 							inputProps={{
 								name: 'versionStatus',
 								id: 'version-no'

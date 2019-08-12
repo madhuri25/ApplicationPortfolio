@@ -85,7 +85,7 @@ class AddApplicationForm extends React.PureComponent {
 							id="app-name"
 							name="appName"
 							value={this.state.appName}
-							onChange={(event) => this.handleChange(event)}
+							onChange={this.handleChange}
 							required
 						/>
 					</FormControl>
@@ -95,7 +95,7 @@ class AddApplicationForm extends React.PureComponent {
 							id="app-id"
 							name="appGuid"
 							value={this.state.appGuid}
-							onChange={(event) => this.handleChange(event)}
+							onChange={this.handleChange}
 							required
 						/>
 					</FormControl>
@@ -103,7 +103,7 @@ class AddApplicationForm extends React.PureComponent {
 						<InputLabel htmlFor="app-state">State</InputLabel>
 						<Select
 							value={this.state.appState}
-							onChange={(event) => this.handleChange(event)}
+							onChange={this.handleChange}
 							inputProps={{
 								name: 'appState',
 								id: 'app-state'
@@ -121,7 +121,7 @@ class AddApplicationForm extends React.PureComponent {
 							id="version-no"
 							name="appVersion"
 							value={this.state.appVersion}
-							onChange={(event) => this.handleChange(event)}
+							onChange={this.handleChange}
 							required
 						/>
 					</FormControl>
@@ -131,7 +131,7 @@ class AddApplicationForm extends React.PureComponent {
 							id="version-id"
 							name="appVersionGuid"
 							value={this.state.appVersionGuid}
-							onChange={(event) => this.handleChange(event)}
+							onChange={this.handleChange}
 							required
 						/>
 					</FormControl>
@@ -143,7 +143,7 @@ class AddApplicationForm extends React.PureComponent {
 							type="date"
 							name="appVersionDate"
 							value={new Date(this.state.appVersionDate).toISOString().split('T')[0]}
-							onChange={(event) => this.handleChange(event)}
+							onChange={this.handleChange}
 							required
 						/>
 					</FormControl>
@@ -151,7 +151,7 @@ class AddApplicationForm extends React.PureComponent {
 						<InputLabel htmlFor="version-no">version Status</InputLabel>
 						<Select
 							value={this.state.versionStatus}
-							onChange={(event) => this.handleChange(event)}
+							onChange={this.handleChange}
 							inputProps={{
 								name: 'versionStatus',
 								id: 'version-no'
