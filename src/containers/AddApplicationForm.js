@@ -77,7 +77,7 @@ class AddApplicationForm extends React.PureComponent {
 	render() {
 		return (
 			<div>
-				<header className="form-header">Add Application Form</header>
+				<header className="form-header">Application Form</header>
 				<form onSubmit={(event) => this.handleSubmit(event)}>
 					<FormControl required>
 						<InputLabel htmlFor="app-name">New Application name</InputLabel>
@@ -166,7 +166,7 @@ class AddApplicationForm extends React.PureComponent {
 						</Select>
 					</FormControl>
 					<Button className="form-button" variant="contained" type="submit" value="Submit">
-						Add
+						Add Application
 					</Button>
 				</form>
 				{this.state.Errors && <footer className="form-footer">Please select all the fields</footer>}
