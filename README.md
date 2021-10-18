@@ -25,8 +25,8 @@ See the section about [running tests](https://facebook.github.io/create-react-ap
 Builds the app for production to the `build` folder.<br>
 It correctly bundles React in production mode and optimizes the build for the best performance.
 
-## About 
-This is Single page web application where the users are able to manage their portfolio of applications with the next use cases.
+## About app
+This is a single page web application where the users are able to manage their portfolio of applications with the next use cases.
 
 * User should be able to see the list of applications
 * User should be able to see how many application it has in one glance
