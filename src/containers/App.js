@@ -13,7 +13,7 @@ const App = () => {
   const { applications } = data;
   return (
         <MyContext.Provider value={{ applications }}>
-          <Router>
+          <Router basename={process.env.REACT_APP_PUBLIC_URL}>
             <Switch>
               <Route
                 exact
