@@ -119,7 +119,7 @@ class HomePage extends React.PureComponent {
                     {row.versions.length}
                   </TableCell>
                   <Currentversion versionList={row.versions} />
-                  <TableCell className="table-cell">
+                  <TableCell className="table-cell" align="center">
                     <Link
                       className="link-wrapper"
                       to={{ pathname: `/detailed-view/${row.guid}` }}
@@ -127,7 +127,7 @@ class HomePage extends React.PureComponent {
                       <ZoomIn />
                     </Link>
                   </TableCell>
-                  <TableCell className="table-cell">
+                  <TableCell className="table-cell" align="center">
                     <Button onClick={() => this.onDelete(row.guid)}>
                       <DeleteIcon />
                     </Button>

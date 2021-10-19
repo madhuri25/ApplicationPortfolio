@@ -105,7 +105,7 @@ class DetailedView extends React.PureComponent {
                   <TableCell className="table-cell" align="center">
                     {row.currentVersion ? "Yes" : "No"}
                   </TableCell>
-                  <TableCell className="table-cell">
+                  <TableCell className="table-cell" align="center">
                     <Button onClick={() => this.onDelete(row.guid)}>
                       <DeleteIcon />
                     </Button>
